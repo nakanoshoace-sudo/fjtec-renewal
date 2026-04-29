@@ -51,14 +51,34 @@
     <a href="contact.html">お問い合わせ</a>
   </div>
 
-  <!-- ========== Hero (SynX-style) ========== -->
+  <!-- ========== Hero ========== -->
   <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title-animate">技術と信頼で、<br>ともに創る</h1>
+    <!-- Animated wave/wind SVG background -->
+    <div class="hero-waves">
+      <svg class="hero-waves-svg" viewBox="0 0 1440 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="wave wave-1" d="M-200,400 C0,300 200,500 500,380 C800,260 1000,450 1300,350 C1500,280 1600,360 1700,320" fill="none"/>
+        <path class="wave wave-2" d="M-200,450 C50,350 250,520 550,420 C850,320 1050,500 1350,380 C1500,320 1650,400 1700,370" fill="none"/>
+        <path class="wave wave-3" d="M-200,350 C100,270 300,450 600,340 C900,230 1100,400 1400,300 C1550,250 1650,320 1700,280" fill="none"/>
+        <path class="wave wave-4" d="M-200,500 C80,420 280,560 580,460 C880,360 1080,530 1380,430 C1530,380 1650,440 1700,410" fill="none"/>
+        <path class="wave wave-5" d="M-200,320 C50,250 250,400 550,310 C850,220 1050,370 1350,280 C1500,240 1650,300 1700,260" fill="none"/>
+        <path class="wave wave-6" d="M-200,550 C100,470 300,600 600,500 C900,400 1100,560 1400,460 C1550,420 1650,480 1700,450" fill="none"/>
+      </svg>
     </div>
+
+    <!-- Light gradient overlay -->
+    <div class="hero-gradient"></div>
+
+    <!-- Content (centered) -->
+    <div class="hero-content">
+      <h1 class="hero-title-animate">技術と信頼で、<br>地域の未来を創る</h1>
+      <p class="hero-sub hero-sub-animate">Creating the future with technology and trust.</p>
+    </div>
+
+    <!-- Scroll indicator -->
     <div class="hero-scroll-wrap">
       <div class="hero-scroll" role="button" tabindex="0" aria-label="下へスクロール">
-        <span class="hero-scroll-circle"></span>
+        <span>Scroll</span>
+        <span class="hero-scroll-line"></span>
       </div>
     </div>
   </section>
