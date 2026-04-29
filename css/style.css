@@ -190,8 +190,9 @@ ul {
 }
 
 .header-logo img {
-  height: 36px;
+  height: 40px;
   width: auto;
+  max-width: 220px;
 }
 
 .header-nav {
@@ -310,72 +311,132 @@ ul {
   letter-spacing: 0.1em;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (SynX-style) ---------- */
 .hero {
   position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
-  background: linear-gradient(170deg, #e8f4fb 0%, #f0f8ff 30%, #ffffff 70%);
+  background: #ffffff;
 }
 
-.hero-bg {
+/* Wind animation lines */
+.hero-wind-lines {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+  pointer-events: none;
 }
 
-.hero-bg img {
+.wind-svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
 }
 
-/* Wave overlay via SVG */
-.hero-wave {
+.wind-line {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: windFlow 4s ease-in-out forwards;
+}
+
+.wind-line-1 { animation-delay: 0.2s; stroke: rgba(63,142,201,0.18); stroke-width: 2.5; }
+.wind-line-2 { animation-delay: 0.6s; stroke: rgba(63,142,201,0.14); stroke-width: 2; }
+.wind-line-3 { animation-delay: 1.0s; stroke: rgba(63,142,201,0.10); stroke-width: 1.5; }
+.wind-line-4 { animation-delay: 0.4s; stroke: rgba(63,142,201,0.12); stroke-width: 1.8; }
+.wind-line-5 { animation-delay: 1.2s; stroke: rgba(63,142,201,0.07); stroke-width: 1.2; }
+
+@keyframes windFlow {
+  0% {
+    stroke-dashoffset: 2000;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Continuous gentle sway after initial draw */
+.wind-line-1 { animation: windFlow 4s ease-in-out forwards, windSway 8s ease-in-out 4.2s infinite; }
+.wind-line-2 { animation: windFlow 4s ease-in-out 0.6s forwards, windSway 9s ease-in-out 4.6s infinite; }
+.wind-line-3 { animation: windFlow 4s ease-in-out 1.0s forwards, windSway 10s ease-in-out 5.0s infinite; }
+.wind-line-4 { animation: windFlow 4s ease-in-out 0.4s forwards, windSway 7s ease-in-out 4.4s infinite; }
+.wind-line-5 { animation: windFlow 4s ease-in-out 1.2s forwards, windSway 11s ease-in-out 5.2s infinite; }
+
+@keyframes windSway {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Large logo mark (right side, like SynX) */
+.hero-logo-mark {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 380px;
+  height: auto;
   z-index: 2;
-  line-height: 0;
+  opacity: 0;
+  animation: logoFadeIn 1.5s ease-out 0.8s forwards;
 }
 
-.hero-wave svg {
-  display: block;
+.hero-logo-mark img {
   width: 100%;
   height: auto;
+  opacity: 0.12;
 }
 
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(-50%) scale(0.9); }
+  to { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+/* Hero text content (left-aligned, bottom) */
 .hero-content {
   position: relative;
   z-index: 3;
-  text-align: center;
-  padding: 0 20px;
+  padding: 0 60px 120px;
+  max-width: 700px;
 }
 
-.hero-content h1 {
-  font-size: 2.8rem;
+.hero-content h1,
+.hero-content .hero-title-animate {
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.08em;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
   color: rgb(27, 56, 73);
   margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroTextIn 1s ease-out 1.2s forwards;
 }
 
-.hero-content .hero-sub {
+.hero-content .hero-sub,
+.hero-content .hero-sub-animate {
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.12em;
-  color: rgba(27, 56, 73, 0.6);
+  color: rgba(63, 142, 201, 0.8);
   margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroTextIn 1s ease-out 1.6s forwards;
+}
+
+@keyframes heroTextIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-scroll {
@@ -390,6 +451,11 @@ ul {
   cursor: pointer;
   transition: opacity 0.3s;
   margin-top: 24px;
+  opacity: 0;
+  animation: heroTextIn 1s ease-out 2s forwards;
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
 }
 
 .hero-scroll:hover {
@@ -422,6 +488,26 @@ ul {
     transform: scaleY(0);
     transform-origin: bottom;
     opacity: 0;
+  }
+}
+
+/* Hero responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 24px 80px;
+  }
+  .hero-content h1,
+  .hero-content .hero-title-animate {
+    font-size: 2rem;
+  }
+  .hero-logo-mark {
+    width: 200px;
+    right: -20px;
+    opacity: 0.08;
+  }
+  .hero-scroll {
+    right: 24px;
+    bottom: 24px;
   }
 }
 

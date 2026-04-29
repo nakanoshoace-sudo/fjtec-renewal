@@ -23,7 +23,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="header-logo">
-        <img src="images/logo.png" alt="株式会社フジテック">
+        <img src="images/logo-horizontal.png" alt="株式会社フジテック">
       </a>
 
       <nav class="header-nav">
@@ -51,22 +51,28 @@
     <a href="contact.html">お問い合わせ</a>
   </div>
 
-  <!-- ========== Hero ========== -->
+  <!-- ========== Hero (SynX-style) ========== -->
   <section class="hero">
-    <div class="hero-bg">
-      <img src="images/wave-bg.png" alt="">
-    </div>
-
-    <!-- Wave SVG at bottom -->
-    <div class="hero-wave">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z" fill="#ffffff"/>
+    <!-- Animated wind/wave lines -->
+    <div class="hero-wind-lines">
+      <svg class="wind-svg" viewBox="0 0 1440 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="wind-line wind-line-1" d="M-100,350 C200,300 400,450 700,350 C1000,250 1200,400 1540,320" fill="none" stroke="rgba(63,142,201,0.15)" stroke-width="2"/>
+        <path class="wind-line wind-line-2" d="M-100,400 C250,350 450,500 750,380 C1050,260 1250,420 1540,370" fill="none" stroke="rgba(63,142,201,0.12)" stroke-width="1.5"/>
+        <path class="wind-line wind-line-3" d="M-100,450 C300,400 500,550 800,420 C1100,290 1300,450 1540,400" fill="none" stroke="rgba(63,142,201,0.08)" stroke-width="1"/>
+        <path class="wind-line wind-line-4" d="M-100,300 C150,250 350,400 650,300 C950,200 1150,350 1540,280" fill="none" stroke="rgba(63,142,201,0.1)" stroke-width="1.5"/>
+        <path class="wind-line wind-line-5" d="M-100,500 C350,450 550,580 850,460 C1150,340 1350,480 1540,430" fill="none" stroke="rgba(63,142,201,0.06)" stroke-width="1"/>
       </svg>
     </div>
 
-    <div class="hero-content fade-in">
-      <h1>技術と信頼で、<br>地域の未来を創る</h1>
-      <p class="hero-sub">Creating the future with technology and trust.</p>
+    <!-- Large logo mark floating -->
+    <div class="hero-logo-mark">
+      <img src="images/logo-vertical-transparent.png" alt="">
+    </div>
+
+    <!-- Content (left-aligned like SynX) -->
+    <div class="hero-content">
+      <h1 class="hero-title-animate">技術と信頼で、<br>地域の未来を創る</h1>
+      <p class="hero-sub hero-sub-animate">Creating the future with technology and trust.</p>
       <div class="hero-scroll" role="button" tabindex="0" aria-label="下へスクロール">
         <span>Scroll</span>
         <span class="hero-scroll-line"></span>
@@ -211,7 +217,7 @@
 
         <div class="footer-left">
           <div class="footer-logo">
-            <a href="index.html"><img src="images/logo.png" alt="株式会社フジテック"></a>
+            <a href="index.html"><img src="images/logo-horizontal.png" alt="株式会社フジテック"></a>
           </div>
           <p class="footer-company-info">
             株式会社フジテック<br>
