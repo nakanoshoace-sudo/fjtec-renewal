@@ -316,21 +316,23 @@ ul {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 700px;
+  min-height: 600px;
+  max-height: 900px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   background: #ffffff;
   z-index: 1;
 }
 
-/* Wave background image (SynX: right-aligned, z-index:-1, opacity:0.6) */
+/* Wave background image (SynX: right-aligned, behind text) */
 .hero-wave-wrap {
   position: absolute;
-  top: 12%;
+  top: 5%;
   right: -5%;
-  width: 90%;
-  height: 80%;
+  width: 85%;
+  height: 85%;
   z-index: -1;
   overflow: hidden;
 }
@@ -340,10 +342,10 @@ ul {
   height: 100%;
   object-fit: contain;
   object-position: right center;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
-/* White mask sliding from left → reveals wave (SynX signature animation) */
+/* White mask sliding left→right to reveal wave */
 .hero-wave-mask {
   position: absolute;
   top: 0;
@@ -352,7 +354,7 @@ ul {
   height: 100%;
   background: #ffffff;
   transform-origin: left center;
-  animation: waveMaskReveal 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s forwards;
+  animation: waveMaskReveal 2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s forwards;
 }
 
 @keyframes waveMaskReveal {
@@ -360,31 +362,8 @@ ul {
   to { transform: scaleX(0); }
 }
 
-/* Top: Logo area */
-.hero-top {
-  flex: 0 0 auto;
-  padding: 80px 80px 0;
-}
-
-.hero-logo-area {
-  position: relative;
-  width: 240px;
-  height: auto;
-}
-
-.hero-logo-img {
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.5s forwards;
-}
-
 /* Middle: Title + English */
 .hero-middle {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 0 80px;
 }
 
@@ -400,8 +379,8 @@ ul {
 }
 
 .hero-en {
-  margin-top: 20px;
-  font-size: clamp(1rem, 1.8vw, 1.6rem);
+  margin-top: 16px;
+  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
   font-weight: 400;
   letter-spacing: 0.06em;
   color: rgb(63, 142, 201);
@@ -420,10 +399,11 @@ ul {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Bottom: Scroll area */
+/* Bottom: Scroll area (left-aligned like SynX) */
 .hero-bottom {
-  flex: 0 0 auto;
-  padding: 0 80px 48px;
+  position: absolute;
+  bottom: 48px;
+  left: 80px;
 }
 
 .hero-scroll-area {
@@ -435,21 +415,21 @@ ul {
 }
 
 .hero-scroll-arrow {
-  width: 22px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
   border-right: 2px solid rgb(63, 142, 201);
   border-bottom: 2px solid rgb(63, 142, 201);
-  transform: rotate(45deg) translateY(-4px);
+  transform: rotate(45deg);
   animation: scrollBounce 2s ease-in-out infinite;
 }
 
 @keyframes scrollBounce {
-  0%, 100% { transform: rotate(45deg) translateY(-4px); }
+  0%, 100% { transform: rotate(45deg) translateY(-2px); }
   50% { transform: rotate(45deg) translateY(4px); }
 }
 
 .hero-scroll-text {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   color: rgb(63, 142, 201);
   font-weight: 500;
@@ -457,21 +437,17 @@ ul {
 
 /* Hero responsive */
 @media (max-width: 768px) {
-  .hero-top {
-    padding: 60px 24px 0;
-  }
   .hero-middle {
     padding: 0 24px;
   }
   .hero-bottom {
-    padding: 0 24px 32px;
-  }
-  .hero-logo-area {
-    width: 160px;
+    left: 24px;
+    bottom: 32px;
   }
   .hero-wave-wrap {
-    width: 120%;
-    right: -20%;
+    width: 110%;
+    right: -15%;
+    top: 10%;
   }
 }
 
