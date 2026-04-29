@@ -169,13 +169,13 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0);
-  transition: background 0.4s, box-shadow 0.4s;
+  background: #ffffff;
+  transition: box-shadow 0.4s;
   padding: 0;
 }
 
 .header.is-scrolled {
-  background: rgba(255, 255, 255, 0.97);
+  background: #ffffff;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
 }
 
@@ -360,6 +360,53 @@ ul {
 @keyframes waveMaskReveal {
   from { transform: scaleX(1); }
   to { transform: scaleX(0); }
+}
+
+/* Wind streaks (left → right, fast) */
+.hero-wind {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wind-streak {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(63,142,201,0.35) 30%, rgba(63,142,201,0.15) 70%, transparent 100%);
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.w1 { top: 22%; width: 45%; animation: windBlow 1.2s ease-in-out 1.5s forwards; }
+.w2 { top: 35%; width: 55%; height: 1.5px; animation: windBlow 1.0s ease-in-out 1.7s forwards; }
+.w3 { top: 48%; width: 65%; animation: windBlow 1.4s ease-in-out 1.4s forwards; }
+.w4 { top: 58%; width: 40%; height: 1.5px; animation: windBlow 1.1s ease-in-out 1.8s forwards; }
+.w5 { top: 70%; width: 50%; animation: windBlow 1.3s ease-in-out 1.6s forwards; }
+.w6 { top: 30%; width: 35%; animation: windBlow 1.0s ease-in-out 2.0s forwards; }
+.w7 { top: 55%; width: 60%; height: 0.5px; animation: windBlow 1.5s ease-in-out 1.3s forwards; }
+.w8 { top: 80%; width: 30%; animation: windBlow 1.1s ease-in-out 1.9s forwards; }
+
+@keyframes windBlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120vw);
+  }
 }
 
 /* Middle: Title + English */
@@ -778,7 +825,7 @@ ul {
 /* ---------- Footer ---------- */
 .footer {
   padding: 60px 0 32px;
-  background: #f4f6f8;
+  background: #ffffff;
 }
 
 .footer-top {
