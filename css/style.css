@@ -1249,20 +1249,19 @@ ul {
   font-size: 1rem;
 }
 
-/* ---------- Experience Tabs ---------- */
+/* ---------- Experience Cards ---------- */
 .service-experience {
   padding: 100px 0;
-  background: linear-gradient(135deg, #1a6ca8 0%, #0d4a7a 40%, #0a3d68 100%);
-  color: #fff;
+  background: #ffffff;
 }
 
 .experience-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .experience-header .section-en {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(63, 142, 201);
 }
 
 .experience-header h2 {
@@ -1270,78 +1269,120 @@ ul {
   font-weight: 700;
   margin-bottom: 12px;
   letter-spacing: 0.05em;
+  color: rgb(27, 56, 73);
 }
 
 .experience-sub {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(27, 56, 73, 0.6);
 }
 
-.experience-tabs {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.tab-buttons {
+.experience-cards {
   display: flex;
-  gap: 4px;
-  margin-bottom: 32px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 48px;
 }
 
-.tab-btn {
-  padding: 10px 28px;
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-family: 'Noto Sans JP', sans-serif;
+.exp-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(27, 56, 73, 0.06);
+  border: 1px solid rgba(27, 56, 73, 0.06);
 }
 
-.tab-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
+.exp-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.exp-card-img {
+  position: relative;
+  width: 320px;
+  min-height: 220px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.exp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exp-card-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgb(63, 142, 201);
   color: #fff;
-}
-
-.tab-btn.active {
-  background: #fff;
-  color: rgb(27, 56, 73);
-  border-color: #fff;
+  font-size: 0.8rem;
   font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
 }
 
-.tab-content {
-  display: none;
+.exp-card:nth-child(even) .exp-card-label {
+  left: auto;
+  right: 16px;
 }
 
-.tab-content.active {
-  display: block;
-}
-
-.tag-cloud {
+.exp-card-body {
+  flex: 1;
+  padding: 32px 40px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  align-items: center;
 }
 
-.exp-tag {
-  display: inline-block;
-  padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.9);
-  transition: background 0.3s;
+.exp-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 32px;
+  list-style: none;
 }
 
-.exp-tag:hover {
-  background: rgba(255, 255, 255, 0.2);
+.exp-list li {
+  font-size: 0.88rem;
+  color: rgb(27, 56, 73);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(27, 56, 73, 0.06);
+  position: relative;
+  padding-left: 14px;
+}
+
+.exp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: rgb(63, 142, 201);
+  border-radius: 50%;
+}
+
+/* Experience responsive */
+@media (max-width: 768px) {
+  .exp-card {
+    flex-direction: column !important;
+  }
+  .exp-card-img {
+    width: 100%;
+    height: 180px;
+  }
+  .exp-card-label {
+    left: 16px !important;
+    right: auto !important;
+  }
+  .exp-card-body {
+    padding: 24px;
+  }
+  .exp-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Company Page — Mission ---------- */
@@ -2118,16 +2159,6 @@ ul {
 
   .service-experience {
     padding: 60px 0;
-  }
-
-  .tab-buttons {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tab-btn {
-    padding: 8px 18px;
-    font-size: 0.8rem;
   }
 
   .company-mission {
