@@ -345,7 +345,7 @@ ul {
   opacity: 0.55;
 }
 
-/* White mask sliding left→right to reveal wave */
+/* White mask sliding to reveal wave (left → right) */
 .hero-wave-mask {
   position: absolute;
   top: 0;
@@ -353,7 +353,7 @@ ul {
   width: 100%;
   height: 100%;
   background: #ffffff;
-  transform-origin: left center;
+  transform-origin: right center;
   animation: waveMaskReveal 2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s forwards;
 }
 
