@@ -98,4 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
       child.style.transitionDelay = `${i * 0.15}s`;
     });
   });
+
+  /* ---------- Contact form tabs ---------- */
+  const formTabs = document.querySelectorAll('.form-tab');
+  const formContents = document.querySelectorAll('.tab-content');
+
+  if (formTabs.length) {
+    formTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+
+        // Switch active tab
+        formTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Switch active form
+        formContents.forEach(c => c.classList.remove('active'));
+        const targetForm = document.getElementById('form-' + target);
+        if (targetForm) targetForm.classList.add('active');
+      });
+    });
+  }
 });

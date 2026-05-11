@@ -125,39 +125,163 @@
       <div class="contact-form-wrapper fade-in">
         <div class="contact-form-header">
           <h2>お問い合わせフォーム</h2>
-          <p>以下のフォームに必要事項をご記入の上、送信ボタンを押してください。<br><span class="required-note">*は必須項目です。</span></p>
+          <p>該当するカテゴリを選択し、必要事項をご記入の上、送信ボタンを押してください。<br><span class="required-note">*は必須項目です。</span></p>
         </div>
 
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="name">お名前 <span class="required">*</span></label>
-            <input type="text" id="name" name="name" placeholder="例：山田 太郎" required>
-          </div>
+        <!-- Tab Selector -->
+        <div class="form-tabs">
+          <button class="form-tab active" data-tab="general">お問い合わせ</button>
+          <button class="form-tab" data-tab="newgrad">新卒採用</button>
+          <button class="form-tab" data-tab="career">中途採用</button>
+        </div>
 
+        <!-- ===== General Inquiry Form ===== -->
+        <form class="contact-form tab-content active" id="form-general" action="#" method="post">
+          <input type="hidden" name="form-type" value="general">
           <div class="form-group">
-            <label for="email">メールアドレス <span class="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="例：example@email.com" required>
+            <label for="gen-name">お名前 <span class="required">*</span></label>
+            <input type="text" id="gen-name" name="name" placeholder="例：山田 太郎" required>
           </div>
-
           <div class="form-group">
-            <label for="company-name">会社名</label>
-            <input type="text" id="company-name" name="company-name" placeholder="例：株式会社○○">
+            <label for="gen-email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="gen-email" name="email" placeholder="例：example@email.com" required>
           </div>
-
           <div class="form-group">
-            <label for="phone">電話番号</label>
-            <input type="tel" id="phone" name="phone" placeholder="例：025-XXX-XXXX">
+            <label for="gen-company">会社名</label>
+            <input type="text" id="gen-company" name="company-name" placeholder="例：株式会社○○">
           </div>
-
           <div class="form-group">
-            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-            <textarea id="message" name="message" rows="8" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+            <label for="gen-phone">電話番号</label>
+            <input type="tel" id="gen-phone" name="phone" placeholder="例：025-XXX-XXXX">
           </div>
-
+          <div class="form-group">
+            <label for="gen-message">お問い合わせ内容 <span class="required">*</span></label>
+            <textarea id="gen-message" name="message" rows="8" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+          </div>
           <div class="form-submit">
             <button type="submit" class="btn-primary">送信する</button>
           </div>
         </form>
+
+        <!-- ===== New Graduate Form ===== -->
+        <form class="contact-form tab-content" id="form-newgrad" action="#" method="post">
+          <input type="hidden" name="form-type" value="newgrad">
+          <div class="form-group">
+            <label for="ng-name">お名前 <span class="required">*</span></label>
+            <input type="text" id="ng-name" name="name" placeholder="例：山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label for="ng-furigana">ふりがな <span class="required">*</span></label>
+            <input type="text" id="ng-furigana" name="furigana" placeholder="例：やまだ たろう" required>
+          </div>
+          <div class="form-group">
+            <label for="ng-email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="ng-email" name="email" placeholder="例：example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="ng-phone">電話番号 <span class="required">*</span></label>
+            <input type="tel" id="ng-phone" name="phone" placeholder="例：090-XXXX-XXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="ng-school">学校名 <span class="required">*</span></label>
+            <input type="text" id="ng-school" name="school" placeholder="例：○○大学 △△学部" required>
+          </div>
+          <div class="form-group">
+            <label for="ng-graduation">卒業予定年月 <span class="required">*</span></label>
+            <input type="month" id="ng-graduation" name="graduation" required>
+          </div>
+          <div class="form-group">
+            <label for="ng-motivation">志望動機 <span class="required">*</span></label>
+            <textarea id="ng-motivation" name="motivation" rows="6" placeholder="弊社への志望動機をご記入ください。" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ng-pr">自己PR</label>
+            <textarea id="ng-pr" name="self-pr" rows="6" placeholder="自己PRをご記入ください。"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ng-remarks">備考等</label>
+            <textarea id="ng-remarks" name="remarks" rows="4" placeholder="その他、ご質問やご連絡事項があればご記入ください。"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">送信する</button>
+          </div>
+        </form>
+
+        <!-- ===== Career (Mid-Career) Form ===== -->
+        <form class="contact-form tab-content" id="form-career" action="#" method="post">
+          <input type="hidden" name="form-type" value="career">
+
+          <h3 class="form-section-title">基本情報</h3>
+          <div class="form-group">
+            <label for="cr-name">お名前 <span class="required">*</span></label>
+            <input type="text" id="cr-name" name="name" placeholder="例：山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label for="cr-furigana">ふりがな <span class="required">*</span></label>
+            <input type="text" id="cr-furigana" name="furigana" placeholder="例：やまだ たろう" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group form-group-short">
+              <label for="cr-age">年齢 <span class="required">*</span></label>
+              <div class="input-suffix">
+                <input type="number" id="cr-age" name="age" placeholder="例：28" min="18" max="99" required>
+                <span>歳</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cr-zip">郵便番号 <span class="required">*</span></label>
+            <input type="text" id="cr-zip" name="zipcode" placeholder="例：1234567（ハイフンなし）" maxlength="7" pattern="\d{7}" required>
+          </div>
+          <div class="form-group">
+            <label for="cr-address">住所 <span class="required">*</span></label>
+            <input type="text" id="cr-address" name="address" placeholder="例：新潟県新潟市中央区○○1-2-3" required>
+          </div>
+          <div class="form-group">
+            <label for="cr-email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="cr-email" name="email" placeholder="例：example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="cr-phone">電話番号 <span class="required">*</span></label>
+            <input type="tel" id="cr-phone" name="phone" placeholder="例：090-XXXX-XXXX" required>
+          </div>
+
+          <h3 class="form-section-title">前職歴</h3>
+          <div class="form-group">
+            <label for="cr-prev-company">会社名 <span class="required">*</span></label>
+            <input type="text" id="cr-prev-company" name="prev-company" placeholder="例：株式会社○○" required>
+          </div>
+          <div class="form-group">
+            <label for="cr-prev-dept">部署名</label>
+            <input type="text" id="cr-prev-dept" name="prev-department" placeholder="例：開発部">
+          </div>
+          <div class="form-group">
+            <label for="cr-prev-duties">職務内容 <span class="required">*</span></label>
+            <textarea id="cr-prev-duties" name="prev-duties" rows="5" maxlength="1000" placeholder="職務内容をご記入ください。（全角1000文字以内）" required></textarea>
+            <p class="form-hint">全角1000文字以内</p>
+          </div>
+          <div class="form-group">
+            <label for="cr-reason">転職・退職理由 <span class="required">*</span></label>
+            <textarea id="cr-reason" name="reason" rows="5" maxlength="1000" placeholder="転職・退職理由をご記入ください。（全角1000文字以内）" required></textarea>
+            <p class="form-hint">全角1000文字以内</p>
+          </div>
+          <div class="form-group">
+            <label for="cr-motivation">弊社への入社志望動機 <span class="required">*</span></label>
+            <textarea id="cr-motivation" name="motivation" rows="6" placeholder="志望動機をご記入ください。" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="cr-pr">自己PR</label>
+            <textarea id="cr-pr" name="self-pr" rows="6" placeholder="自己PRをご記入ください。"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="cr-remarks">備考等</label>
+            <textarea id="cr-remarks" name="remarks" rows="4" placeholder="その他、ご質問やご連絡事項があればご記入ください。"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">送信する</button>
+          </div>
+        </form>
+
       </div>
     </div>
   </section>

@@ -2361,6 +2361,95 @@ ul {
   font-size: 0.82rem;
 }
 
+/* Form Tabs */
+.form-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+  border-bottom: 2px solid rgba(27, 56, 73, 0.08);
+}
+
+.form-tab {
+  flex: 1;
+  padding: 16px 8px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(27, 56, 73, 0.4);
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.form-tab:hover {
+  color: rgba(27, 56, 73, 0.7);
+}
+
+.form-tab.active {
+  color: rgb(63, 142, 201);
+  border-bottom-color: rgb(63, 142, 201);
+  font-weight: 600;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Form Section Title (中途採用の「基本情報」「前職歴」) */
+.form-section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgb(27, 56, 73);
+  margin: 40px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(63, 142, 201, 0.2);
+}
+
+.form-section-title:first-of-type {
+  margin-top: 0;
+}
+
+/* Form Row (horizontal) */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group-short {
+  max-width: 200px;
+}
+
+/* Input with suffix (歳) */
+.input-suffix {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-suffix input {
+  flex: 1;
+}
+
+.input-suffix span {
+  font-size: 0.9rem;
+  color: rgb(27, 56, 73);
+}
+
+/* Form hint */
+.form-hint {
+  font-size: 0.78rem;
+  color: rgba(27, 56, 73, 0.4);
+  margin-top: 6px;
+}
+
 .form-group {
   margin-bottom: 28px;
 }
