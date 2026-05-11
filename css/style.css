@@ -1412,6 +1412,50 @@ ul {
   color: rgba(27, 56, 73, 0.7);
 }
 
+/* ---------- Company Page — Management Philosophy ---------- */
+.company-philosophy {
+  padding: 80px 0;
+  background: #f8fafb;
+}
+
+.philosophy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(27, 56, 73);
+  margin-bottom: 48px;
+}
+
+.philosophy-body {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.philosophy-item {
+  padding-left: 24px;
+  border-left: 3px solid rgb(63, 142, 201);
+}
+
+.philosophy-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(63, 142, 201);
+  margin-bottom: 12px;
+}
+
+.philosophy-text {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: rgba(27, 56, 73, 0.8);
+}
+
 /* ---------- Company Page — CEO Message ---------- */
 .company-message {
   padding: 100px 0;
@@ -1824,6 +1868,234 @@ ul {
 
 .position-table td {
   color: rgba(27, 56, 73, 0.7);
+}
+
+/* ---------- Recruit Page — Interview ---------- */
+.recruit-interview {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.interview-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.interview-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(27, 56, 73);
+}
+
+.interview-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.interview-card {
+  background: #f8fafb;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid rgba(27, 56, 73, 0.06);
+}
+
+.interview-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.interview-initial {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgb(63, 142, 201);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.interview-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(27, 56, 73);
+}
+
+.interview-year {
+  font-size: 0.8rem;
+  color: rgba(27, 56, 73, 0.5);
+}
+
+.interview-intro {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(27, 56, 73, 0.7);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(27, 56, 73, 0.06);
+}
+
+.interview-qa { margin-bottom: 20px; }
+
+.interview-q {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgb(63, 142, 201);
+  margin-bottom: 6px;
+}
+
+.interview-q::before { content: 'ーー '; }
+
+.interview-a {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: rgba(27, 56, 73, 0.75);
+}
+
+/* ---------- Recruit Page — Careers ---------- */
+.recruit-careers {
+  padding: 80px 0;
+  background: #f8fafb;
+}
+
+.careers-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careers-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(27, 56, 73);
+  margin-bottom: 40px;
+}
+
+.careers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.careers-item {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(27, 56, 73, 0.06);
+}
+
+.careers-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(27, 56, 73);
+  margin-bottom: 12px;
+}
+
+.careers-item p {
+  font-size: 0.85rem;
+  color: rgba(27, 56, 73, 0.6);
+}
+
+.careers-note {
+  margin-top: 24px;
+  text-align: left;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: rgba(27, 56, 73, 0.6);
+}
+
+.link-underline {
+  color: rgb(63, 142, 201);
+  text-decoration: underline;
+}
+
+/* ---------- Recruit Page — FAQ ---------- */
+.recruit-faq {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(27, 56, 73);
+  margin-bottom: 40px;
+}
+
+.faq-category {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(27, 56, 73);
+  text-align: left;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 3px solid rgb(63, 142, 201);
+}
+
+.faq-list { margin-bottom: 40px; }
+
+.faq-item {
+  text-align: left;
+  border-bottom: 1px solid rgba(27, 56, 73, 0.08);
+}
+
+.faq-item summary {
+  padding: 18px 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgb(27, 56, 73);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-item summary::before {
+  content: 'Q.';
+  font-weight: 700;
+  color: rgb(63, 142, 201);
+  flex-shrink: 0;
+}
+
+.faq-item summary::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: rgba(27, 56, 73, 0.3);
+  transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after { content: '−'; }
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item p,
+.faq-item div {
+  padding: 0 0 18px 28px;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: rgba(27, 56, 73, 0.7);
+}
+
+.faq-item div p { padding: 0; margin-bottom: 12px; }
+
+@media (max-width: 768px) {
+  .interview-card { padding: 24px; }
+  .careers-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Recruit Page — CTA ---------- */
