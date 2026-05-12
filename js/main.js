@@ -113,6 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Mobile menu accordion ---------- */
+  document.querySelectorAll('.mobile-menu-accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('is-open');
+    });
+  });
+
   /* ---------- Contact form tabs ---------- */
   const formTabs = document.querySelectorAll('.form-tab');
   const formContents = document.querySelectorAll('.tab-content');

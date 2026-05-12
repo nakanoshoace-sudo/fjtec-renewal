@@ -419,22 +419,49 @@ ul {
   letter-spacing: 0.1em;
 }
 
-.mobile-menu-group {
+.mobile-menu-accordion {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
 }
 
-.mobile-menu-group-title {
-  font-size: 0.8rem;
-  font-weight: 600;
+.mobile-menu-accordion-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(27, 56, 73);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0;
+}
+
+.mobile-menu-accordion-btn::after {
+  content: ' ▼';
+  font-size: 0.6rem;
+  vertical-align: middle;
   color: rgba(27, 56, 73, 0.4);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  transition: transform 0.3s;
 }
 
-.mobile-menu-group a {
+.mobile-menu-accordion.is-open .mobile-menu-accordion-btn::after {
+  content: ' ▲';
+}
+
+.mobile-menu-accordion-body {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.mobile-menu-accordion.is-open .mobile-menu-accordion-body {
+  display: flex;
+}
+
+.mobile-menu-accordion-body a {
   font-size: 0.95rem;
 }
 
