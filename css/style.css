@@ -381,10 +381,23 @@ ul {
   pointer-events: auto;
 }
 
-.mobile-menu-close {
+.mobile-menu-header {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+.mobile-menu-logo img {
+  height: 32px;
+  width: auto;
+}
+
+.mobile-menu-close {
   background: none;
   border: none;
   font-size: 2.4rem;
