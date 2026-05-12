@@ -419,6 +419,25 @@ ul {
   letter-spacing: 0.1em;
 }
 
+.mobile-menu-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu-group-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(27, 56, 73, 0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.mobile-menu-group a {
+  font-size: 0.95rem;
+}
+
 /* ---------- Hero (SynX Clone) ---------- */
 .hero {
   position: relative;
