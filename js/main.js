@@ -70,11 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Hamburger / Mobile menu ---------- */
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuClose = document.querySelector('.mobile-menu-close');
+  const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
 
   function closeMobileMenu() {
     if (hamburger && mobileMenu) {
       hamburger.classList.remove('is-active');
       mobileMenu.classList.remove('is-open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('is-open');
       document.body.style.overflow = '';
     }
   }
@@ -83,12 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       const isOpen = hamburger.classList.toggle('is-active');
       mobileMenu.classList.toggle('is-open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.toggle('is-open');
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobileMenu);
     });
+
+    // Close button
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+
+    // Overlay tap to close
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    }
   }
 
   /* ---------- Stagger children animation ---------- */
